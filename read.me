@@ -1,0 +1,65 @@
+# CRUD de Produtos em Python com MySQL
+
+Este projeto é um sistema simples de cadastro de produtos (CRUD) utilizando Python e MySQL. Ele permite cadastrar, listar, atualizar, deletar produtos e reiniciar a tabela de vendas.
+
+## Funcionalidades
+
+- **Cadastrar produto:** Adiciona um novo produto com nome e valor.
+- **Listar produtos:** Exibe todos os produtos cadastrados no banco de dados.
+- **Atualizar produto:** Permite alterar o nome ou valor de um produto, buscando por ID, nome ou valor.
+- **Deletar produto:** Remove um produto do banco de dados por ID, nome ou valor.
+- **Reiniciar tabela:** Apaga todos os registros e reinicia o contador de IDs.
+- **Sair:** Encerra o programa.
+
+## Pré-requisitos
+
+- Python 3.x
+- MySQL Server
+- Biblioteca `mysql-connector-python`
+
+## Instalação
+
+1. Instale o conector MySQL para Python:
+    ```
+    pip install mysql-connector-python
+    ```
+
+2. Crie o banco de dados e a tabela no MySQL:
+    ```sql
+    CREATE DATABASE bdyoutube;
+    USE bdyoutube;
+    CREATE TABLE vendas (
+        idVendas INT AUTO_INCREMENT PRIMARY KEY,
+        nome_produto VARCHAR(255),
+        valor FLOAT
+    );
+    ```
+
+3. Configure o acesso ao banco de dados no início do arquivo `python.py`:
+    ```python
+    conexao = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='SUA_SENHA',
+        database='bdyoutube',
+    )
+    ```
+
+## Como usar
+
+1. Execute o arquivo `python.py`:
+    ```
+    python python.py
+    ```
+
+2. Siga as instruções do menu para realizar as operações desejadas.
+
+## Observações
+
+- Todos os dados são armazenados na tabela `vendas` do banco `bdyoutube`.
+- A opção de reiniciar a tabela apaga todos os produtos e reinicia o contador de IDs.
+- Use as opções de atualização e exclusão com atenção, pois as operações são permanentes.
+
+---
+
+Desenvolvido para fins didáticos.
